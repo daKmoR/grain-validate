@@ -1,0 +1,23 @@
+{
+  "name": "grain-validate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grain-translate": "github:daKmoR/grain-translate"
+  },
+  "devDependencies": {
+    "grain-lit-element": "github:daKmoR/grain-lit-element",
+    "validator": "^9.1.1"
+  },
+  "scripts": {
+    "start": "polymer serve",
+    "test": "polymer test --skip-selenium-install",
+    "lint": "eslint *.js && polymer lint -i *.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
