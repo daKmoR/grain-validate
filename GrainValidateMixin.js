@@ -23,7 +23,23 @@ const GrainValidateMixin = superclass => class extends GrainTranslateMixin(super
       warning: {
         type: 'Object'
       },
+      autoValidate: {
+        type: 'Boolean',
+        value: false
+      }
     });
+  }
+
+  _onBlur() {
+    if (this.value !== '') {
+      this.validate();
+    }
+  }
+
+  _onInput() {
+    if (this.autoValidate) {
+      this.validate();
+    }
   }
 
   /**
@@ -34,6 +50,10 @@ const GrainValidateMixin = superclass => class extends GrainTranslateMixin(super
     this.validateType('error');
     if (!this.error) {
       this.validateType('warning');
+    }
+
+    if (this.error || this.warning) {
+      this.autoValidate = true;
     }
   }
 
@@ -62,7 +82,7 @@ const GrainValidateMixin = superclass => class extends GrainTranslateMixin(super
       return;
     }
     let resultList = [];
-    let value = this.$$slot.input.value;
+    let value = this.rawValue;
     let optional = false;
     let required = function(value) {
       return (typeof value === 'string' && value !== '') || (typeof value !== 'string' && typeof value !== 'undefined');
