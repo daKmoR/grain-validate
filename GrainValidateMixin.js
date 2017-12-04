@@ -2,7 +2,8 @@ import GrainTranslateMixin from '../grain-translate/GrainTranslateMixin.js';
 
 const GrainValidateMixin = superclass => class extends GrainTranslateMixin(superclass) {
   static get properties() {
-    return Object.assign(super.properties, {
+    return {
+      ...super.properties,
       errorValidators: {
         type: 'Array'
       },
@@ -27,7 +28,7 @@ const GrainValidateMixin = superclass => class extends GrainTranslateMixin(super
         type: 'Boolean',
         value: false
       }
-    });
+    };
   }
 
   _onBlur() {
