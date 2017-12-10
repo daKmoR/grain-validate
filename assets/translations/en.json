@@ -1,6 +1,17 @@
 {
   "errors": {
-    "required": "{{fieldName}} needs to be filled in",
-    "isLength": "You have to enter at least {{min}} characters."
+    "required": "Error: {{fieldName}} needs to be filled in.",
+    "isLength": "Error: You have to enter between {{validatorParams.min}} and {{validatorParams.max}} characters.",
+    "minLength": "Error: You have to enter at least {{validatorParams.min}} characters."
+  },
+  "warnings": {
+    "required": "Warning: {{fieldName}} should to be filled in",
+    "minLength": "Warning: That seems a bit short."
+  },
+  "oks": {
+    "randomOk": "Nice!",
+    "ok1": "Nice!",
+    "ok2": "Way to go!",
+    "ok3": "Well thats better"
   }
 }
